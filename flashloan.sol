@@ -27,7 +27,7 @@ contract flashloan is IPancakeCallee{
     }   
     function pancakeCall(address sender, uint amount0, uint amount1, bytes calldata data) override external{
         //
-        //Đang cóĐang có tiền, so du la amount+fee
+        // Avalaible Money, amount is amount+fee
         //
         wbnb.deposit{value:fee}();
         wbnb.transfer(address(LP),amount+fee);//tra tien
